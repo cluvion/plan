@@ -1,0 +1,2196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dr. Orn Clinic — International Expansion Plan 2025</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Syne:wght@400;500;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+  :root {
+    --black: #080808;
+    --deep: #0d0d0d;
+    --card: #111111;
+    --border: #1e1e1e;
+    --gold: #C9A84C;
+    --gold-light: #E8C97A;
+    --gold-dim: rgba(201,168,76,0.12);
+    --gold-glow: rgba(201,168,76,0.06);
+    --white: #F7F4EE;
+    --white-dim: rgba(247,244,238,0.55);
+    --white-faint: rgba(247,244,238,0.08);
+    --red-accent: #8B2020;
+    --font-display: 'Cormorant Garamond', serif;
+    --font-sans: 'Syne', sans-serif;
+    --font-body: 'DM Sans', sans-serif;
+  }
+
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; font-size: 16px; }
+
+  body {
+    background: var(--black);
+    color: var(--white);
+    font-family: var(--font-body);
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  /* ─── NOISE TEXTURE OVERLAY ─── */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.035'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0.4;
+  }
+
+  /* ─── SCROLLBAR ─── */
+  ::-webkit-scrollbar { width: 4px; }
+  ::-webkit-scrollbar-track { background: var(--black); }
+  ::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 2px; }
+
+  /* ─── TYPOGRAPHY ─── */
+  h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 300; letter-spacing: 0.01em; }
+  .label {
+    font-family: var(--font-sans);
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+  .gold { color: var(--gold); }
+  .white-dim { color: var(--white-dim); }
+
+  /* ─── LAYOUT ─── */
+  section { position: relative; overflow: hidden; }
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+  .section-pad { padding: 120px 0; }
+
+  /* ─── GOLD LINE DIVIDER ─── */
+  .gold-line {
+    width: 60px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    margin: 1.5rem 0;
+  }
+  .gold-line.center { margin: 1.5rem auto; }
+
+  /* ─── SECTION HEADER ─── */
+  .section-header { margin-bottom: 70px; }
+  .section-header h2 { font-size: clamp(2.5rem, 5vw, 4rem); line-height: 1.1; }
+  .section-header p { font-size: 1.05rem; color: var(--white-dim); max-width: 600px; margin-top: 1rem; }
+
+  /* ─── CARD ─── */
+  .card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 2px;
+    padding: 2.5rem;
+    position: relative;
+    transition: border-color 0.3s, transform 0.3s;
+  }
+  .card:hover { border-color: rgba(201,168,76,0.3); transform: translateY(-4px); }
+  .card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  .card:hover::before { opacity: 1; }
+
+  /* ─── GRID ─── */
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+  .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.2rem; }
+
+  /* ─── NAV ─── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 1000;
+    padding: 1.2rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(8,8,8,0.85);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-logo {
+    font-family: var(--font-display);
+    font-size: 1.2rem;
+    letter-spacing: 0.12em;
+    color: var(--gold);
+    text-decoration: none;
+  }
+  .nav-tag {
+    font-family: var(--font-sans);
+    font-size: 0.6rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--white-dim);
+  }
+
+  /* ─── HERO ─── */
+  #hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding-top: 80px;
+    background:
+      radial-gradient(ellipse 80% 60% at 60% 50%, rgba(201,168,76,0.04) 0%, transparent 70%),
+      radial-gradient(ellipse 40% 40% at 20% 80%, rgba(201,168,76,0.03) 0%, transparent 60%),
+      var(--black);
+  }
+  .hero-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+  .hero-eyebrow { display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem; }
+  .hero-eyebrow::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+  .hero-h1 {
+    font-size: clamp(3rem, 6vw, 5.5rem);
+    line-height: 1.0;
+    font-weight: 300;
+  }
+  .hero-h1 em { font-style: italic; color: var(--gold); }
+  .hero-sub {
+    font-size: 1.1rem;
+    color: var(--white-dim);
+    margin: 2rem 0 3rem;
+    max-width: 480px;
+    line-height: 1.8;
+  }
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    background: var(--gold);
+    color: var(--black);
+    padding: 1rem 2.2rem;
+    font-family: var(--font-sans);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+  }
+  .btn-primary:hover { background: var(--gold-light); transform: translateY(-2px); }
+  .btn-outline {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    background: transparent;
+    color: var(--gold);
+    padding: 1rem 2.2rem;
+    font-family: var(--font-sans);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: 1px solid var(--gold);
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+    margin-left: 1rem;
+  }
+  .btn-outline:hover { background: var(--gold-dim); transform: translateY(-2px); }
+
+  .hero-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; margin-top: 4rem; }
+  .stat-item {
+    background: var(--white-faint);
+    padding: 1.5rem;
+    border-left: 1px solid var(--border);
+  }
+  .stat-item:first-child { border-left: none; }
+  .stat-num {
+    font-family: var(--font-display);
+    font-size: 2.5rem;
+    color: var(--gold);
+    line-height: 1;
+  }
+  .stat-label { font-size: 0.75rem; color: var(--white-dim); margin-top: 0.5rem; font-family: var(--font-sans); letter-spacing: 0.1em; }
+
+  .hero-visual {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .hero-frame {
+    width: 100%;
+    aspect-ratio: 3/4;
+    border: 1px solid var(--border);
+    position: relative;
+    overflow: hidden;
+    background: var(--card);
+  }
+  .hero-frame-inner {
+    position: absolute;
+    inset: 20px;
+    border: 1px solid rgba(201,168,76,0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    text-align: center;
+    padding: 2rem;
+  }
+  .hero-frame-icon {
+    width: 80px;
+    height: 80px;
+    border: 1px solid var(--gold);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    color: var(--gold);
+  }
+  .hero-frame h3 {
+    font-size: 1.8rem;
+    line-height: 1.2;
+  }
+  .hero-frame p { font-size: 0.9rem; color: var(--white-dim); }
+
+  .corner-mark {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+  }
+  .corner-mark.tl { top: 0; left: 0; border-top: 1px solid var(--gold); border-left: 1px solid var(--gold); }
+  .corner-mark.tr { top: 0; right: 0; border-top: 1px solid var(--gold); border-right: 1px solid var(--gold); }
+  .corner-mark.bl { bottom: 0; left: 0; border-bottom: 1px solid var(--gold); border-left: 1px solid var(--gold); }
+  .corner-mark.br { bottom: 0; right: 0; border-bottom: 1px solid var(--gold); border-right: 1px solid var(--gold); }
+
+  /* ─── BRAND ANALYSIS ─── */
+  #brand { background: var(--deep); }
+  .analysis-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; }
+  .analysis-item {
+    background: var(--card);
+    padding: 3rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .analysis-item h3 {
+    font-size: 1.6rem;
+    margin: 1rem 0 1.5rem;
+  }
+  .bullet-list { list-style: none; }
+  .bullet-list li {
+    padding: 0.6rem 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 0.95rem;
+    color: var(--white-dim);
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+  .bullet-list li::before {
+    content: '';
+    width: 4px;
+    height: 4px;
+    background: var(--gold);
+    border-radius: 50%;
+    margin-top: 0.55rem;
+    flex-shrink: 0;
+  }
+  .bullet-list li:last-child { border-bottom: none; }
+
+  .perception-bar { margin-top: 1.5rem; }
+  .bar-item { margin-bottom: 1.2rem; }
+  .bar-label { display: flex; justify-content: space-between; font-size: 0.8rem; margin-bottom: 0.4rem; font-family: var(--font-sans); letter-spacing: 0.05em; }
+  .bar-track { height: 3px; background: var(--border); border-radius: 1px; overflow: hidden; }
+  .bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--gold), var(--gold-light));
+    border-radius: 1px;
+    animation: barGrow 1.5s ease forwards;
+    transform-origin: left;
+  }
+  @keyframes barGrow { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+
+  /* ─── MARKET OPPORTUNITY ─── */
+  #market {
+    background: var(--black);
+  }
+  .market-hero {
+    background: var(--card);
+    border: 1px solid var(--border);
+    padding: 4rem;
+    margin-bottom: 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+  }
+  .big-number {
+    font-family: var(--font-display);
+    font-size: clamp(4rem, 10vw, 8rem);
+    color: var(--gold);
+    line-height: 0.9;
+    font-weight: 300;
+  }
+  .big-number span { font-size: 0.35em; color: var(--white-dim); }
+  .comparison-table { width: 100%; border-collapse: collapse; }
+  .comparison-table th {
+    font-family: var(--font-sans);
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    padding: 1rem 1.2rem;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+    background: rgba(201,168,76,0.04);
+  }
+  .comparison-table td {
+    padding: 1rem 1.2rem;
+    border-bottom: 1px solid var(--border);
+    font-size: 0.9rem;
+    color: var(--white-dim);
+  }
+  .comparison-table tr:last-child td { border-bottom: none; }
+  .comparison-table td.highlight { color: var(--gold); font-weight: 500; font-family: var(--font-sans); }
+  .comparison-table tr:hover td { background: var(--white-faint); }
+
+  /* ─── TARGET CUSTOMER ─── */
+  #customer { background: var(--deep); }
+  .profile-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    padding: 0;
+    overflow: hidden;
+  }
+  .profile-header {
+    background: linear-gradient(135deg, rgba(201,168,76,0.08), transparent);
+    padding: 2.5rem;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+  }
+  .avatar {
+    width: 56px;
+    height: 56px;
+    border: 1px solid var(--gold);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    color: var(--gold);
+    flex-shrink: 0;
+  }
+  .profile-body { padding: 2.5rem; }
+  .tag-list { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1rem; }
+  .tag {
+    background: var(--gold-dim);
+    border: 1px solid rgba(201,168,76,0.2);
+    color: var(--gold);
+    padding: 0.3rem 0.9rem;
+    font-family: var(--font-sans);
+    font-size: 0.7rem;
+    letter-spacing: 0.08em;
+    font-weight: 500;
+  }
+  .pain-item {
+    padding: 1.2rem;
+    border: 1px solid var(--border);
+    margin-bottom: 0.8rem;
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    transition: border-color 0.3s;
+  }
+  .pain-item:hover { border-color: rgba(201,168,76,0.3); }
+  .pain-icon { color: var(--gold); font-size: 1rem; margin-top: 0.2rem; flex-shrink: 0; }
+  .pain-item h4 { font-family: var(--font-sans); font-size: 0.85rem; font-weight: 600; margin-bottom: 0.3rem; }
+  .pain-item p { font-size: 0.85rem; color: var(--white-dim); }
+
+  /* ─── OFFER STRUCTURE ─── */
+  #offer { background: var(--black); }
+  .price-hero {
+    text-align: center;
+    padding: 5rem 2rem;
+    background: var(--card);
+    border: 1px solid var(--border);
+    position: relative;
+    margin-bottom: 3rem;
+    overflow: hidden;
+  }
+  .price-hero::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 50%;
+    transform: translateX(-50%);
+    width: 200px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  }
+  .price-tag {
+    font-family: var(--font-display);
+    font-size: clamp(4rem, 10vw, 8rem);
+    color: var(--gold);
+    line-height: 1;
+    font-weight: 300;
+  }
+  .price-tag sup { font-size: 0.35em; vertical-align: super; color: var(--white-dim); }
+  .package-items { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--border); }
+  .pkg-item {
+    background: var(--card);
+    padding: 2.5rem;
+    text-align: center;
+    transition: background 0.3s;
+  }
+  .pkg-item:hover { background: rgba(201,168,76,0.04); }
+  .pkg-icon {
+    width: 50px;
+    height: 50px;
+    border: 1px solid var(--gold);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    color: var(--gold);
+    margin: 0 auto 1.5rem;
+  }
+  .pkg-item h3 { font-size: 1.3rem; margin-bottom: 0.75rem; }
+  .pkg-item p { font-size: 0.85rem; color: var(--white-dim); }
+
+  /* ─── FUNNEL STRATEGY ─── */
+  #funnel { background: var(--deep); }
+  .funnel-stages {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    position: relative;
+  }
+  .funnel-stage {
+    padding: 3rem 2.5rem;
+    border: 1px solid var(--border);
+    position: relative;
+  }
+  .funnel-stage:not(:last-child)::after {
+    content: '\f054';
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    position: absolute;
+    right: -14px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--gold);
+    font-size: 0.7rem;
+    z-index: 2;
+    background: var(--deep);
+    padding: 0.5rem;
+  }
+  .stage-num {
+    font-family: var(--font-display);
+    font-size: 5rem;
+    color: rgba(201,168,76,0.08);
+    line-height: 1;
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+    font-weight: 300;
+  }
+  .stage-title {
+    font-family: var(--font-sans);
+    font-size: 0.65rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1rem;
+  }
+  .funnel-stage h3 { font-size: 1.8rem; margin-bottom: 1.5rem; }
+
+  /* ─── MARKETING STRATEGY ─── */
+  #marketing { background: var(--black); }
+  .marketing-block { margin-bottom: 4rem; }
+  .marketing-block-header {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .block-icon {
+    width: 44px;
+    height: 44px;
+    background: var(--gold-dim);
+    border: 1px solid rgba(201,168,76,0.25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--gold);
+    font-size: 0.9rem;
+    flex-shrink: 0;
+  }
+  .marketing-block-header h3 { font-size: 1.8rem; }
+
+  .platform-cards { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--border); margin-bottom: 2rem; }
+  .platform-card {
+    background: var(--card);
+    padding: 2rem 1.5rem;
+    text-align: center;
+    transition: background 0.3s;
+  }
+  .platform-card:hover { background: var(--gold-glow); }
+  .platform-card i { font-size: 1.8rem; color: var(--gold); margin-bottom: 0.75rem; }
+  .platform-card h4 { font-family: var(--font-sans); font-size: 0.85rem; font-weight: 600; margin-bottom: 0.5rem; }
+  .platform-card p { font-size: 0.8rem; color: var(--white-dim); }
+
+  .budget-row {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 1px;
+    background: var(--border);
+    margin-top: 1.5rem;
+  }
+  .budget-cell {
+    background: var(--card);
+    padding: 1.2rem 1.5rem;
+    font-size: 0.9rem;
+  }
+  .budget-cell.head {
+    background: rgba(201,168,76,0.06);
+    font-family: var(--font-sans);
+    font-size: 0.65rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+  .budget-cell.amount { font-family: var(--font-display); font-size: 1.2rem; color: var(--gold); }
+
+  .creative-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--border); }
+  .creative-card {
+    background: var(--card);
+    padding: 2rem;
+    transition: background 0.3s;
+  }
+  .creative-card:hover { background: var(--gold-glow); }
+  .creative-card .num {
+    font-family: var(--font-display);
+    font-size: 3rem;
+    color: rgba(201,168,76,0.15);
+    line-height: 1;
+    margin-bottom: 0.5rem;
+  }
+  .creative-card h4 { font-family: var(--font-sans); font-size: 0.8rem; font-weight: 700; letter-spacing: 0.05em; margin-bottom: 0.5rem; color: var(--gold); }
+  .creative-card p { font-size: 0.82rem; color: var(--white-dim); }
+
+  /* REELS / ORGANIC */
+  .reel-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 1px; background: var(--border); }
+  .reel-item {
+    background: var(--card);
+    padding: 1.5rem;
+    text-align: center;
+    transition: background 0.3s;
+  }
+  .reel-item:hover { background: var(--gold-glow); }
+  .reel-item i { font-size: 1.2rem; color: var(--gold); margin-bottom: 0.5rem; display: block; }
+  .reel-item p { font-size: 0.78rem; color: var(--white-dim); }
+
+  /* INFLUENCER */
+  .influencer-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+  .inf-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    padding: 2.5rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .inf-card::before {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  .inf-card:hover::before { opacity: 1; }
+
+  /* ─── SALES SYSTEM ─── */
+  #sales { background: var(--deep); }
+  .pipeline {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 0;
+    position: relative;
+  }
+  .pipeline-step {
+    padding: 2.5rem 1.5rem;
+    border: 1px solid var(--border);
+    text-align: center;
+    position: relative;
+  }
+  .pipeline-step:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    right: -1px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+    border-left: 8px solid var(--gold);
+    z-index: 2;
+  }
+  .step-num {
+    width: 36px;
+    height: 36px;
+    border: 1px solid var(--gold);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem;
+    font-family: var(--font-sans);
+    font-size: 0.75rem;
+    color: var(--gold);
+    font-weight: 700;
+  }
+  .pipeline-step h4 { font-family: var(--font-sans); font-size: 0.78rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.5rem; }
+  .pipeline-step p { font-size: 0.8rem; color: var(--white-dim); }
+
+  /* ─── COST STRUCTURE ─── */
+  #costs { background: var(--black); }
+  .metrics-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--border); margin-bottom: 3rem; }
+  .metric-box {
+    background: var(--card);
+    padding: 2.5rem 2rem;
+    text-align: center;
+  }
+  .metric-box .m-label { font-family: var(--font-sans); font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--white-dim); margin-bottom: 0.75rem; }
+  .metric-box .m-value { font-family: var(--font-display); font-size: 2.5rem; color: var(--gold); line-height: 1; }
+  .metric-box .m-note { font-size: 0.78rem; color: var(--white-dim); margin-top: 0.5rem; }
+
+  .profit-calc {
+    background: var(--card);
+    border: 1px solid var(--border);
+    padding: 4rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+  }
+  .calc-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 0.95rem;
+  }
+  .calc-row:last-child { border-bottom: none; }
+  .calc-row .val { font-family: var(--font-display); font-size: 1.3rem; }
+  .calc-row.total .val { color: var(--gold); font-size: 1.8rem; }
+  .calc-row.total { border-top: 1px solid var(--gold); margin-top: 0.5rem; padding-top: 1.2rem; }
+
+  /* ─── SCALING PLAN ─── */
+  #scale { background: var(--deep); }
+  .phases { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--border); }
+  .phase {
+    background: var(--card);
+    padding: 3rem;
+    position: relative;
+    overflow: hidden;
+    transition: background 0.3s;
+  }
+  .phase:hover { background: var(--gold-glow); }
+  .phase-num {
+    font-family: var(--font-display);
+    font-size: 6rem;
+    color: rgba(201,168,76,0.05);
+    position: absolute;
+    top: -1rem;
+    right: 1rem;
+    line-height: 1;
+    font-weight: 300;
+  }
+  .phase-badge {
+    display: inline-flex;
+    background: var(--gold-dim);
+    border: 1px solid rgba(201,168,76,0.25);
+    color: var(--gold);
+    padding: 0.3rem 0.8rem;
+    font-family: var(--font-sans);
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+  }
+  .phase h3 { font-size: 1.8rem; margin-bottom: 1.5rem; }
+
+  /* ─── WHY IT WORKS ─── */
+  #why { background: var(--black); }
+  .advantages { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+  .adv-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    padding: 2.5rem;
+    position: relative;
+    transition: all 0.3s;
+  }
+  .adv-card:hover { border-color: rgba(201,168,76,0.4); background: var(--gold-glow); }
+  .adv-card .adv-icon {
+    width: 48px;
+    height: 48px;
+    border: 1px solid var(--gold);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--gold);
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  .adv-card h3 { font-size: 1.4rem; margin-bottom: 1rem; }
+  .adv-card p { font-size: 0.88rem; color: var(--white-dim); }
+
+  /* ─── AGENCY PACKAGE ─── */
+  #package {
+    background: var(--deep);
+  }
+  .pkg-intro {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+  .package-tiers { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+  .tier-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    padding: 0;
+    overflow: hidden;
+    transition: transform 0.3s;
+  }
+  .tier-card:hover { transform: translateY(-6px); }
+  .tier-card.featured { border-color: var(--gold); }
+  .tier-header {
+    padding: 3rem;
+    border-bottom: 1px solid var(--border);
+    background: rgba(201,168,76,0.03);
+  }
+  .tier-card.featured .tier-header { background: linear-gradient(135deg, rgba(201,168,76,0.1), rgba(201,168,76,0.03)); }
+  .tier-header .tier-name {
+    font-family: var(--font-sans);
+    font-size: 0.65rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1rem;
+  }
+  .tier-header h3 { font-size: 2rem; margin-bottom: 0.5rem; }
+  .tier-price {
+    margin-top: 1.5rem;
+  }
+  .tier-price .inr {
+    font-family: var(--font-display);
+    font-size: 2.8rem;
+    color: var(--gold);
+    line-height: 1;
+  }
+  .tier-price .usd {
+    font-family: var(--font-sans);
+    font-size: 0.85rem;
+    color: var(--white-dim);
+    margin-top: 0.3rem;
+    letter-spacing: 0.05em;
+  }
+  .tier-price .per {
+    font-size: 0.8rem;
+    color: var(--white-dim);
+    font-family: var(--font-sans);
+    margin-top: 0.2rem;
+  }
+  .tier-body { padding: 3rem; }
+  .tier-feature {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    padding: 0.8rem 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 0.9rem;
+  }
+  .tier-feature:last-child { border-bottom: none; }
+  .tier-feature i { color: var(--gold); font-size: 0.75rem; margin-top: 0.3rem; flex-shrink: 0; }
+
+  .featured-badge {
+    display: inline-flex;
+    background: var(--gold);
+    color: var(--black);
+    padding: 0.25rem 0.8rem;
+    font-family: var(--font-sans);
+    font-size: 0.6rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+  }
+
+  /* ─── CLOSING SECTION ─── */
+  #closing {
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    background:
+      radial-gradient(ellipse 60% 60% at 50% 50%, rgba(201,168,76,0.07) 0%, transparent 70%),
+      var(--black);
+    padding: 100px 0;
+  }
+  #closing h2 { font-size: clamp(2.5rem, 6vw, 5rem); margin-bottom: 1.5rem; }
+  #closing p { font-size: 1.1rem; color: var(--white-dim); max-width: 600px; margin: 0 auto 3rem; }
+
+  /* ─── FOOTER ─── */
+  footer {
+    background: var(--deep);
+    border-top: 1px solid var(--border);
+    padding: 3rem 0;
+    text-align: center;
+  }
+  footer p { font-size: 0.8rem; color: var(--white-dim); font-family: var(--font-sans); letter-spacing: 0.08em; }
+
+  /* ─── ANIMATIONS ─── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 0.6; }
+    50% { opacity: 1; }
+  }
+  @keyframes shimmer {
+    0% { background-position: -200% center; }
+    100% { background-position: 200% center; }
+  }
+
+  .fade-up { animation: fadeUp 0.9s ease forwards; }
+  .fade-up-1 { animation: fadeUp 0.9s 0.1s ease both; }
+  .fade-up-2 { animation: fadeUp 0.9s 0.25s ease both; }
+  .fade-up-3 { animation: fadeUp 0.9s 0.4s ease both; }
+  .fade-up-4 { animation: fadeUp 0.9s 0.55s ease both; }
+
+  .shimmer-text {
+    background: linear-gradient(90deg, var(--gold) 0%, var(--gold-light) 30%, var(--white) 50%, var(--gold-light) 70%, var(--gold) 100%);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: shimmer 4s linear infinite;
+  }
+
+  /* ─── SECTION ORNAMENT ─── */
+  .ornament {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  .ornament::before, .ornament::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
+  .ornament span {
+    font-family: var(--font-sans);
+    font-size: 0.6rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold);
+    white-space: nowrap;
+  }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 1024px) {
+    .grid-4, .platform-cards, .creative-grid { grid-template-columns: repeat(2, 1fr); }
+    .pipeline { grid-template-columns: repeat(3, 1fr); }
+    .reel-grid { grid-template-columns: repeat(3, 1fr); }
+  }
+
+  @media (max-width: 768px) {
+    .hero-inner { grid-template-columns: 1fr; }
+    .hero-visual { display: none; }
+    .grid-2, .analysis-grid, .market-hero, .funnel-stages, .phases, .package-tiers, .profit-calc, .influencer-cards { grid-template-columns: 1fr; }
+    .grid-3, .grid-4, .platform-cards, .creative-grid, .reel-grid, .metrics-grid, .advantages, .package-items { grid-template-columns: 1fr 1fr; }
+    .pipeline { grid-template-columns: 1fr 1fr; }
+    .comparison-table { font-size: 0.8rem; }
+    .section-pad { padding: 80px 0; }
+    .funnel-stage:not(:last-child)::after { display: none; }
+    .pipeline-step:not(:last-child)::after { display: none; }
+    .budget-row { grid-template-columns: 1fr; }
+    nav .nav-tag { display: none; }
+  }
+
+  @media (max-width: 480px) {
+    .grid-3, .grid-4, .platform-cards, .creative-grid, .reel-grid, .metrics-grid, .advantages, .package-items { grid-template-columns: 1fr; }
+    .pipeline { grid-template-columns: 1fr; }
+    .hero-stats { grid-template-columns: 1fr; }
+    .hero-h1 { font-size: 2.5rem; }
+  }
+
+  /* ─── SCROLL REVEAL (simple CSS class toggling via IntersectionObserver) ─── */
+  .reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .reveal-delay-1 { transition-delay: 0.1s; }
+  .reveal-delay-2 { transition-delay: 0.2s; }
+  .reveal-delay-3 { transition-delay: 0.35s; }
+
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#hero" class="nav-logo">DR. ORN CLINIC</a>
+  <span class="nav-tag">International Expansion Plan &nbsp;/&nbsp; 2025</span>
+</nav>
+
+<!-- ══════════════════════════════════════════════
+     01. HERO
+══════════════════════════════════════════════ -->
+<section id="hero">
+  <div class="container">
+    <div class="hero-inner">
+      <div>
+        <div class="hero-eyebrow fade-up-1">
+          <span class="label">Business Development Strategy</span>
+        </div>
+        <h1 class="hero-h1 fade-up-2">
+          The <em>Asian</em><br>Hub for<br>Hair & Wellness
+        </h1>
+        <p class="hero-sub fade-up-3">
+          A precision-engineered international expansion strategy for Dr. Orn Clinic — targeting high-ticket patients from Australia & Singapore at $9,000 per case.
+        </p>
+        <div class="fade-up-4">
+          <a href="#brand" class="btn-primary"><span>View Strategy</span> <i class="fas fa-arrow-down"></i></a>
+          <a href="#package" class="btn-outline">Agency Packages</a>
+        </div>
+        <div class="hero-stats fade-up-4">
+          <div class="stat-item">
+            <div class="stat-num">$9K</div>
+            <div class="stat-label">Target Case Value</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num">2</div>
+            <div class="stat-label">Target Markets</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num">12×</div>
+            <div class="stat-label">ROI Potential</div>
+          </div>
+        </div>
+      </div>
+      <div class="hero-visual fade-up-3">
+        <div class="hero-frame">
+          <div class="corner-mark tl"></div>
+          <div class="corner-mark tr"></div>
+          <div class="corner-mark bl"></div>
+          <div class="corner-mark br"></div>
+          <div class="hero-frame-inner">
+            <div class="hero-frame-icon"><i class="fas fa-user-md"></i></div>
+            <h3>Dr. Orn Clinic</h3>
+            <p class="label" style="letter-spacing:0.25em;">Medical Hair &amp; Wellness</p>
+            <div class="gold-line center"></div>
+            <p style="font-size:0.85rem; color:var(--white-dim);">Bangkok, Thailand</p>
+            <div class="tag-list" style="justify-content:center; margin-top:1.5rem;">
+              <span class="tag">Australia</span>
+              <span class="tag">Singapore</span>
+              <span class="tag">FUE / FUT</span>
+              <span class="tag">Wellness</span>
+            </div>
+            <div style="margin-top:2rem; padding-top:2rem; border-top:1px solid var(--border); width:100%;">
+              <div class="label" style="text-align:center; margin-bottom:0.5rem;">Target Revenue / Month</div>
+              <div style="font-family:var(--font-display); font-size:2.5rem; color:var(--gold); text-align:center;">$54,000</div>
+              <div style="font-size:0.78rem; color:var(--white-dim); text-align:center;">6 cases × $9,000</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     02. BRAND ANALYSIS
+══════════════════════════════════════════════ -->
+<section id="brand" class="section-pad">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="label">Section 01</div>
+      <div class="gold-line"></div>
+      <h2>Brand Analysis</h2>
+      <p>A rigorous assessment of Dr. Orn Clinic's current digital presence, market perception, and conversion gaps.</p>
+    </div>
+
+    <div class="analysis-grid reveal">
+      <div class="analysis-item">
+        <span class="label" style="color:#4CAF50;">Strengths</span>
+        <h3>What's Working</h3>
+        <ul class="bullet-list">
+          <li>Dr. Onuma's personal brand creates high-trust authority as a visible, credentialed physician</li>
+          <li>Bilingual presence (Thai + English) signals international awareness</li>
+          <li>Instagram content demonstrates real results — authentic before/after documentation</li>
+          <li>Dual-brand strategy (personal + clinic) broadens audience reach</li>
+          <li>Medical-grade positioning separates from budget hair clinics</li>
+          <li>Strong female physician presence appeals to a wider demographic</li>
+        </ul>
+      </div>
+      <div class="analysis-item">
+        <span class="label" style="color:#e55;">Gaps & Weaknesses</span>
+        <h3>What Needs Fixing</h3>
+        <ul class="bullet-list">
+          <li>Website lacks explicit international patient pathway or dedicated landing pages</li>
+          <li>No visible pricing signals for overseas patients — creates friction</li>
+          <li>Social proof (testimonials, review counts) is minimal and unstructured</li>
+          <li>No clear funnel: discovery → consultation → booking</li>
+          <li>CTA strategy is weak — no WhatsApp lead capture or booking prompt</li>
+          <li>Video content underutilized — Reels strategy absent or inconsistent</li>
+          <li>Zero paid advertising presence visible in AU/SG markets</li>
+        </ul>
+      </div>
+      <div class="analysis-item">
+        <span class="label">Market Perception</span>
+        <h3>How the Market Sees You</h3>
+        <div class="perception-bar">
+          <div class="bar-item">
+            <div class="bar-label"><span>Doctor Credibility</span><span>88%</span></div>
+            <div class="bar-track"><div class="bar-fill" style="width:88%"></div></div>
+          </div>
+          <div class="bar-item">
+            <div class="bar-label"><span>International Readiness</span><span>32%</span></div>
+            <div class="bar-track"><div class="bar-fill" style="width:32%"></div></div>
+          </div>
+          <div class="bar-item">
+            <div class="bar-label"><span>Digital Lead Capture</span><span>25%</span></div>
+            <div class="bar-track"><div class="bar-fill" style="width:25%"></div></div>
+          </div>
+          <div class="bar-item">
+            <div class="bar-label"><span>Content Consistency</span><span>60%</span></div>
+            <div class="bar-track"><div class="bar-fill" style="width:60%"></div></div>
+          </div>
+          <div class="bar-item">
+            <div class="bar-label"><span>Trust Signals (Reviews)</span><span>45%</span></div>
+            <div class="bar-track"><div class="bar-fill" style="width:45%"></div></div>
+          </div>
+        </div>
+      </div>
+      <div class="analysis-item">
+        <span class="label">Opportunity</span>
+        <h3>The Open Door</h3>
+        <ul class="bullet-list">
+          <li>Medical tourism from AU &amp; SG to Thailand is growing 18% YoY — demand already exists</li>
+          <li>Dr. Orn already has the credibility — it just isn't packaged for international buyers</li>
+          <li>No direct Thai clinic competitor is running targeted paid ads in AU/SG right now</li>
+          <li>Currency advantage: AUD/SGD patients pay less than local market while Dr. Orn earns a premium</li>
+          <li>Instagram content quality is strong enough to convert if paired with the right funnel</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     03. MARKET OPPORTUNITY
+══════════════════════════════════════════════ -->
+<section id="market" class="section-pad">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="label">Section 02</div>
+      <div class="gold-line"></div>
+      <h2>Market Opportunity</h2>
+      <p>Why Australia and Singapore represent the highest-value acquisition channels right now.</p>
+    </div>
+
+    <div class="market-hero reveal">
+      <div>
+        <div class="label" style="margin-bottom:1rem;">Global Medical Tourism Market</div>
+        <div class="big-number">$207<span>B</span></div>
+        <p style="font-size:0.9rem; color:var(--white-dim); margin-top:1.5rem; max-width:340px; line-height:1.8;">
+          Medical tourism is one of the fastest-growing sectors globally. Hair transplant is among the top 5 procedures sought abroad, driven by cost disparity and quality clinics in Asia.
+        </p>
+        <div class="gold-line" style="margin-top:2rem;"></div>
+        <div style="display:flex; gap:2rem; margin-top:1.5rem;">
+          <div>
+            <div style="font-family:var(--font-display); font-size:2rem; color:var(--gold);">18%</div>
+            <div style="font-size:0.75rem; color:var(--white-dim); font-family:var(--font-sans); letter-spacing:0.05em;">YoY growth AU→TH</div>
+          </div>
+          <div>
+            <div style="font-family:var(--font-display); font-size:2rem; color:var(--gold);">62%</div>
+            <div style="font-size:0.75rem; color:var(--white-dim); font-family:var(--font-sans); letter-spacing:0.05em;">Cost saving vs local</div>
+          </div>
+          <div>
+            <div style="font-family:var(--font-display); font-size:2rem; color:var(--gold);">#3</div>
+            <div style="font-size:0.75rem; color:var(--white-dim); font-family:var(--font-sans); letter-spacing:0.05em;">Thailand in Asia tourism rank</div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="label" style="margin-bottom:1.5rem;">Price Comparison: Hair Transplant</div>
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th>Market</th>
+              <th>Avg. Local Cost</th>
+              <th>Dr. Orn Package</th>
+              <th>Patient Saving</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>🇦🇺 Sydney, Australia</td>
+              <td>A$18,000–A$28,000</td>
+              <td class="highlight">~A$14,500</td>
+              <td class="highlight">↓ 40–50%</td>
+            </tr>
+            <tr>
+              <td>🇸🇬 Singapore</td>
+              <td>S$18,000–S$25,000</td>
+              <td class="highlight">~S$12,500</td>
+              <td class="highlight">↓ 35–50%</td>
+            </tr>
+            <tr>
+              <td>🇬🇧 United Kingdom</td>
+              <td>£9,000–£15,000</td>
+              <td class="highlight">~£7,200</td>
+              <td class="highlight">↓ 30–50%</td>
+            </tr>
+            <tr>
+              <td>🇺🇸 USA</td>
+              <td>$12,000–$20,000</td>
+              <td class="highlight">~$9,000</td>
+              <td class="highlight">↓ 25–55%</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="grid-3 reveal">
+      <div class="card">
+        <div class="label" style="margin-bottom:0.75rem;">🇦🇺 Australia</div>
+        <h3 style="font-size:1.6rem; margin-bottom:1rem;">High-spend, trust-conscious traveller</h3>
+        <ul class="bullet-list">
+          <li>4.2M+ men aged 25–55 experiencing hair loss</li>
+          <li>High disposable income, comfortable with medical travel</li>
+          <li>Thailand already a top 3 holiday destination</li>
+          <li>Hair transplant locally costs 3× more — massive trigger</li>
+          <li>Strong digital research behaviour pre-purchase</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="label" style="margin-bottom:0.75rem;">🇸🇬 Singapore</div>
+        <h3 style="font-size:1.6rem; margin-bottom:1rem;">Affluent, discerning, Bangkok-adjacent</h3>
+        <ul class="bullet-list">
+          <li>1.5M working-age men with above-average income</li>
+          <li>Bangkok is 2.5 hours away — minimal travel barrier</li>
+          <li>High social media engagement, especially Instagram</li>
+          <li>Culture of excellence in personal grooming &amp; wellness</li>
+          <li>Expat community highly receptive to medical tourism</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="label" style="margin-bottom:0.75rem;">Why Travel for Hair?</div>
+        <h3 style="font-size:1.6rem; margin-bottom:1rem;">The triggers are clear</h3>
+        <ul class="bullet-list">
+          <li>Cost savings of 40–60% justify flights + hotel</li>
+          <li>Perceived quality of Asian medical specialists is high</li>
+          <li>"Combine with a vacation" lowers psychological barrier</li>
+          <li>Peer referrals in expat communities drive discovery</li>
+          <li>Privacy — procedure done away from home office/social circle</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     04. TARGET CUSTOMER PROFILE
+══════════════════════════════════════════════ -->
+<section id="customer" class="section-pad">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="label">Section 03</div>
+      <div class="gold-line"></div>
+      <h2>Target Customer Profile</h2>
+      <p>Know your buyer with surgical precision. Every campaign, message, and touchpoint is built around these archetypes.</p>
+    </div>
+
+    <div class="grid-2 reveal">
+      <div class="profile-card">
+        <div class="profile-header">
+          <div class="avatar"><i class="fas fa-user-tie"></i></div>
+          <div>
+            <div class="label">Primary Persona — AU</div>
+            <h3 style="font-size:1.5rem; margin-top:0.5rem;">"The High-Achiever"</h3>
+          </div>
+        </div>
+        <div class="profile-body">
+          <div class="tag-list">
+            <span class="tag">Age 32–50</span>
+            <span class="tag">Income A$150K+</span>
+            <span class="tag">Professional / Exec</span>
+            <span class="tag">Researches deeply</span>
+            <span class="tag">Appearance-conscious</span>
+          </div>
+          <div class="gold-line" style="margin-top:1.5rem;"></div>
+          <div style="margin-top:1.5rem;">
+            <div class="pain-item">
+              <i class="fas fa-brain pain-icon"></i>
+              <div>
+                <h4>Confidence Erosion</h4>
+                <p>Thinning hair in a high-visibility career is a silent professional insecurity he rarely vocalises.</p>
+              </div>
+            </div>
+            <div class="pain-item">
+              <i class="fas fa-tag pain-icon"></i>
+              <div>
+                <h4>Sticker Shock at Home</h4>
+                <p>Australian quotes of A$20K+ feel excessive. He knows better options exist abroad but hasn't found trust yet.</p>
+              </div>
+            </div>
+            <div class="pain-item">
+              <i class="fas fa-shield-alt pain-icon"></i>
+              <div>
+                <h4>Trust Barrier</h4>
+                <p>He won't compromise on safety. He needs to see credentials, real results, and doctor-led care — not a factory clinic.</p>
+              </div>
+            </div>
+            <div class="pain-item">
+              <i class="fas fa-plane pain-icon"></i>
+              <div>
+                <h4>Logistics Fear</h4>
+                <p>Afraid of going abroad alone for a medical procedure. A seamless experience with support removes this entirely.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="profile-card">
+        <div class="profile-header">
+          <div class="avatar"><i class="fas fa-briefcase"></i></div>
+          <div>
+            <div class="label">Primary Persona — SG</div>
+            <h3 style="font-size:1.5rem; margin-top:0.5rem;">"The Urban Professional"</h3>
+          </div>
+        </div>
+        <div class="profile-body">
+          <div class="tag-list">
+            <span class="tag">Age 28–45</span>
+            <span class="tag">Income S$120K+</span>
+            <span class="tag">Finance / Tech / Legal</span>
+            <span class="tag">Instagram native</span>
+            <span class="tag">Wellness-forward</span>
+          </div>
+          <div class="gold-line" style="margin-top:1.5rem;"></div>
+          <div style="margin-top:1.5rem;">
+            <div class="pain-item">
+              <i class="fas fa-eye pain-icon"></i>
+              <div>
+                <h4>Social Visibility</h4>
+                <p>Singapore's hyper-competitive professional environment makes appearance a strategic asset he actively manages.</p>
+              </div>
+            </div>
+            <div class="pain-item">
+              <i class="fas fa-calendar-check pain-icon"></i>
+              <div>
+                <h4>Proximity = Low Barrier</h4>
+                <p>Bangkok is a weekend trip. If the clinic packages it right, this becomes a luxury medical retreat, not a procedure.</p>
+              </div>
+            </div>
+            <div class="pain-item">
+              <i class="fas fa-star pain-icon"></i>
+              <div>
+                <h4>Quality-Seeking</h4>
+                <p>He's not looking for cheap — he's looking for premium at better value. Doctor credibility is non-negotiable.</p>
+              </div>
+            </div>
+            <div class="pain-item">
+              <i class="fas fa-users pain-icon"></i>
+              <div>
+                <h4>Community Proof</h4>
+                <p>One trusted friend's recommendation outweighs 10 ads. He buys via social proof inside his peer network.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card reveal" style="margin-top:2rem;">
+      <div class="label" style="margin-bottom:1.5rem;">Decision Psychology — The Buying Journey</div>
+      <div class="grid-4">
+        <div style="padding:0 1.5rem; border-right:1px solid var(--border);">
+          <div style="font-family:var(--font-display); font-size:3rem; color:rgba(201,168,76,0.15);">01</div>
+          <h4 style="font-family:var(--font-sans); font-size:0.85rem; font-weight:700; color:var(--gold); margin-bottom:0.5rem;">TRIGGER</h4>
+          <p style="font-size:0.85rem; color:var(--white-dim);">Sees a colleague's transformation or Instagram Reel. Plants the seed. Takes no action — yet.</p>
+        </div>
+        <div style="padding:0 1.5rem; border-right:1px solid var(--border);">
+          <div style="font-family:var(--font-display); font-size:3rem; color:rgba(201,168,76,0.15);">02</div>
+          <h4 style="font-family:var(--font-sans); font-size:0.85rem; font-weight:700; color:var(--gold); margin-bottom:0.5rem;">RESEARCH</h4>
+          <p style="font-size:0.85rem; color:var(--white-dim);">Spends 2–4 weeks researching. Googles clinics, watches YouTube, reads Reddit. Evaluates 6–10 options.</p>
+        </div>
+        <div style="padding:0 1.5rem; border-right:1px solid var(--border);">
+          <div style="font-family:var(--font-display); font-size:3rem; color:rgba(201,168,76,0.15);">03</div>
+          <h4 style="font-family:var(--font-sans); font-size:0.85rem; font-weight:700; color:var(--gold); margin-bottom:0.5rem;">SHORTLIST</h4>
+          <p style="font-size:0.85rem; color:var(--white-dim);">Narrows to 2–3 clinics. Now trust and perceived value determine the winner. Retargeting captures him here.</p>
+        </div>
+        <div style="padding:0 1.5rem;">
+          <div style="font-family:var(--font-display); font-size:3rem; color:rgba(201,168,76,0.15);">04</div>
+          <h4 style="font-family:var(--font-sans); font-size:0.85rem; font-weight:700; color:var(--gold); margin-bottom:0.5rem;">CLOSE</h4>
+          <p style="font-size:0.85rem; color:var(--white-dim);">A clear, warm consultation call closes the case. Personalised package offer seals the commitment.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     05. OFFER STRUCTURE
+══════════════════════════════════════════════ -->
+<section id="offer" class="section-pad">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="label">Section 04</div>
+      <div class="gold-line"></div>
+      <h2>The $9,000 Premium Package</h2>
+      <p>Price isn't the sell — transformation and trust are. Every element of this package removes friction and amplifies perceived value.</p>
+    </div>
+
+    <div class="price-hero reveal">
+      <div class="label" style="margin-bottom:1rem;">All-Inclusive International Patient Package</div>
+      <div class="price-tag"><sup>USD </sup>9,000</div>
+      <p style="color:var(--white-dim); font-size:1rem; margin-top:1rem;">Everything. Included. From first inquiry to final follow-up.</p>
+      <div class="ornament" style="margin:2rem auto; max-width:500px;"><span>What's inside</span></div>
+    </div>
+
+    <div class="package-items reveal">
+      <div class="pkg-item">
+        <div class="pkg-icon"><i class="fas fa-user-md"></i></div>
+        <h3>FUE Hair Transplant</h3>
+        <p>Up to 3,000 grafts with Dr. Orn's direct involvement. Advanced FUE technique, personalised hairline design.</p>
+      </div>
+      <div class="pkg-item">
+        <div class="pkg-icon"><i class="fas fa-comments"></i></div>
+        <h3>Full Consultation</h3>
+        <p>Pre-arrival video consult + in-clinic assessment. Customised treatment plan. No surprises on arrival.</p>
+      </div>
+      <div class="pkg-item">
+        <div class="pkg-icon"><i class="fas fa-plane"></i></div>
+        <h3>Airport Concierge</h3>
+        <p>Private pickup from Suvarnabhumi airport. Car transfers to clinic and hotel. Zero logistical stress.</p>
+      </div>
+      <div class="pkg-item">
+        <div class="pkg-icon"><i class="fas fa-hotel"></i></div>
+        <h3>Luxury Accommodation</h3>
+        <p>3 nights at a 4-star Bangkok hotel (optional upgrade available). Quiet, clean, recovery-optimised.</p>
+      </div>
+      <div class="pkg-item">
+        <div class="pkg-icon"><i class="fas fa-kit-medical"></i></div>
+        <h3>Post-Op Care Kit</h3>
+        <p>Shampoo, serum, medications, and full written aftercare instructions. International pharmacy-grade supplies.</p>
+      </div>
+      <div class="pkg-item">
+        <div class="pkg-icon"><i class="fas fa-video"></i></div>
+        <h3>12-Month Follow-Up</h3>
+        <p>Virtual check-ins at 1, 3, 6, and 12 months. WhatsApp access to the clinical team throughout recovery.</p>
+      </div>
+    </div>
+
+    <div class="card reveal" style="margin-top:2rem; text-align:center;">
+      <div class="label" style="margin-bottom:0.75rem;">Optional Upsells</div>
+      <div class="tag-list" style="justify-content:center; margin-top:1rem;">
+        <span class="tag">+$400 — Hotel Upgrade (5★)</span>
+        <span class="tag">+$300 — Extended City Transfer Package</span>
+        <span class="tag">+$800 — PRP Hair Therapy Add-on</span>
+        <span class="tag">+$500 — Hair Wellness Supplements (3-mo supply)</span>
+        <span class="tag">+$200 — Priority Response SLA</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     06. FUNNEL STRATEGY
+══════════════════════════════════════════════ -->
+<section id="funnel" class="section-pad">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="label">Section 05</div>
+      <div class="gold-line"></div>
+      <h2>The Patient Acquisition Funnel</h2>
+      <p>A structured pathway from first impression to booked procedure — with zero guesswork at every stage.</p>
+    </div>
+
+    <div class="funnel-stages reveal">
+      <div class="funnel-stage">
+        <div class="stage-num">1</div>
+        <div class="stage-title">Top of Funnel</div>
+        <h3>Awareness</h3>
+        <ul class="bullet-list" style="margin-top:1.5rem;">
+          <li>Meta ads (before/after creative) targeting AU &amp; SG men 28–55</li>
+          <li>Google Search: "hair transplant Bangkok", "hair clinic Thailand"</li>
+          <li>YouTube pre-roll: doctor authority video (60 sec)</li>
+          <li>Instagram Reels organic reach — transformation content</li>
+          <li>Micro-influencer posts in AU/SG lifestyle niche</li>
+        </ul>
+        <div style="margin-top:2rem; padding-top:1.5rem; border-top:1px solid var(--border);">
+          <div class="label" style="margin-bottom:0.5rem;">KPI Target</div>
+          <div style="font-family:var(--font-display); font-size:1.8rem; color:var(--gold);">10,000</div>
+          <div style="font-size:0.8rem; color:var(--white-dim);">monthly impressions / market</div>
+        </div>
+      </div>
+
+      <div class="funnel-stage">
+        <div class="stage-num">2</div>
+        <div class="stage-title">Mid Funnel</div>
+        <h3>Consideration</h3>
+        <ul class="bullet-list" style="margin-top:1.5rem;">
+          <li>Retargeting: website visitors get video testimonials served</li>
+          <li>Landing page with social proof, credentials, and results gallery</li>
+          <li>Free Hair Assessment Lead Magnet (form → WhatsApp)</li>
+          <li>Email nurture sequence (5 emails over 14 days)</li>
+          <li>Live Q&amp;A Instagram stories (weekly engagement)</li>
+        </ul>
+        <div style="margin-top:2rem; padding-top:1.5rem; border-top:1px solid var(--border);">
+          <div class="label" style="margin-bottom:0.5rem;">KPI Target</div>
+          <div style="font-family:var(--font-display); font-size:1.8rem; color:var(--gold);">150–200</div>
+          <div style="font-size:0.8rem; color:var(--white-dim);">qualified leads / month</div>
+        </div>
+      </div>
+
+      <div class="funnel-stage">
+        <div class="stage-num">3</div>
+        <div class="stage-title">Bottom of Funnel</div>
+        <h3>Conversion</h3>
+        <ul class="bullet-list" style="margin-top:1.5rem;">
+          <li>Personal WhatsApp consultation call with Dr. Orn or coordinator</li>
+          <li>Tailored package quote with video breakdown</li>
+          <li>Objection handling: safety, logistics, recovery time</li>
+          <li>Payment plan options (to lower commitment barrier)</li>
+          <li>Limited availability urgency trigger (max 6 international cases/month)</li>
+        </ul>
+        <div style="margin-top:2rem; padding-top:1.5rem; border-top:1px solid var(--border);">
+          <div class="label" style="margin-bottom:0.5rem;">KPI Target</div>
+          <div style="font-family:var(--font-display); font-size:1.8rem; color:var(--gold);">3–6</div>
+          <div style="font-size:0.8rem; color:var(--white-dim);">bookings / month</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     07. MARKETING STRATEGY
+══════════════════════════════════════════════ -->
+<section id="marketing" class="section-pad">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="label">Section 06</div>
+      <div class="gold-line"></div>
+      <h2>Marketing Strategy</h2>
+      <p>Multi-channel dominance — paid, organic, influence, and automation — engineered to own the AU/SG hair transplant conversation.</p>
+    </div>
+
+    <!-- PAID ADS -->
+    <div class="marketing-block reveal">
+      <div class="marketing-block-header">
+        <div class="block-icon"><i class="fas fa-bullseye"></i></div>
+        <div>
+          <div class="label">A</div>
+          <h3>Paid Advertising Strategy</h3>
+        </div>
+      </div>
+
+      <div class="platform-cards">
+        <div class="platform-card">
+          <i class="fab fa-meta"></i>
+          <h4>Meta Ads</h4>
+          <p>Before/after Reels targeting AU/SG men. Lookalike + interest-based + retargeting campaigns.</p>
+        </div>
+        <div class="platform-card">
+          <i class="fab fa-google"></i>
+          <h4>Google Search</h4>
+          <p>High-intent keywords: "hair transplant Bangkok", "FUE Thailand", "hair clinic Thailand cost".</p>
+        </div>
+        <div class="platform-card">
+          <i class="fab fa-youtube"></i>
+          <h4>YouTube Ads</h4>
+          <p>60-second skippable pre-roll. Dr. Orn authority video + patient journey documentary format.</p>
+        </div>
+        <div class="platform-card">
+          <i class="fab fa-instagram"></i>
+          <h4>Instagram Boosted</h4>
+          <p>Top-performing organic Reels boosted with paid budget into AU/SG geo-targeted audiences.</p>
+        </div>
+      </div>
+
+      <div class="label" style="margin:1.5rem 0 0.5rem;">Suggested Monthly Ad Budget (Per Market)</div>
+      <div class="budget-row">
+        <div class="budget-cell head">Platform</div>
+        <div class="budget-cell head">AU Monthly</div>
+        <div class="budget-cell head">SG Monthly</div>
+        <div class="budget-cell">Meta (FB/IG) — Primary channel</div>
+        <div class="budget-cell amount">$800</div>
+        <div class="budget-cell amount">$600</div>
+        <div class="budget-cell">Google Search</div>
+        <div class="budget-cell amount">$400</div>
+        <div class="budget-cell amount">$300</div>
+        <div class="budget-cell">YouTube Pre-roll</div>
+        <div class="budget-cell amount">$200</div>
+        <div class="budget-cell amount">$150</div>
+        <div class="budget-cell">Retargeting (all platforms)</div>
+        <div class="budget-cell amount">$200</div>
+        <div class="budget-cell amount">$150</div>
+        <div class="budget-cell" style="font-weight:600; color:var(--gold);">Total Per Month</div>
+        <div class="budget-cell amount" style="color:var(--gold-light);">$1,600</div>
+        <div class="budget-cell amount" style="color:var(--gold-light);">$1,200</div>
+      </div>
+
+      <div class="label" style="margin:2rem 0 1rem;">Creative Strategy — 4 Pillar Ad System</div>
+      <div class="creative-grid">
+        <div class="creative-card">
+          <div class="num">01</div>
+          <h4>Before / After</h4>
+          <p>Split-screen results. Real patients. No stock images. 6-month transformation timeline. Highest CTR creative.</p>
+        </div>
+        <div class="creative-card">
+          <div class="num">02</div>
+          <h4>Doctor Authority</h4>
+          <p>Dr. Orn speaking directly to camera. Credentials shown. Explains her process. Builds irreplaceable trust.</p>
+        </div>
+        <div class="creative-card">
+          <div class="num">03</div>
+          <h4>Patient Testimonials</h4>
+          <p>International patients (AU/SG) speaking in their own language about their experience. Social proof in native tongue.</p>
+        </div>
+        <div class="creative-card">
+          <div class="num">04</div>
+          <h4>Lifestyle Transformation</h4>
+          <p>Confidence reel — patient at work, social events, dating. Sell the outcome, not the procedure. Highest share rate.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ORGANIC -->
+    <div class="marketing-block reveal">
+      <div class="marketing-block-header">
+        <div class="block-icon"><i class="fab fa-instagram"></i></div>
+        <div>
+          <div class="label">B</div>
+          <h3>Organic Instagram Strategy</h3>
+        </div>
+      </div>
+      <p style="color:var(--white-dim); font-size:0.95rem; margin-bottom:2rem; max-width:800px;">Instagram is the primary organic trust-builder. Consistent, high-quality content positions Dr. Orn as the definitive authority — not just another clinic account.</p>
+      <div class="reel-grid">
+        <div class="reel-item">
+          <i class="fas fa-video"></i>
+          <p><strong style="color:var(--white);">Before/After Reels</strong><br>3× / week. Time-lapse results. Music + captions for silent viewers.</p>
+        </div>
+        <div class="reel-item">
+          <i class="fas fa-graduation-cap"></i>
+          <p><strong style="color:var(--white);">Educational Content</strong><br>2× / week. "Why FUE over FUT", "Graft survival rate explained", "What 2,000 grafts looks like".</p>
+        </div>
+        <div class="reel-item">
+          <i class="fas fa-stethoscope"></i>
+          <p><strong style="color:var(--white);">Doctor POV</strong><br>1× / week. Dr. Orn explaining a case. Builds personal brand above and beyond the clinic brand.</p>
+        </div>
+        <div class="reel-item">
+          <i class="fas fa-globe"></i>
+          <p><strong style="color:var(--white);">International Patient Journey</strong><br>1× / week. "From Sydney to Bangkok" style vlogs. Shows the full experience.</p>
+        </div>
+        <div class="reel-item">
+          <i class="fas fa-question-circle"></i>
+          <p><strong style="color:var(--white);">Q&amp;A Stories</strong><br>Daily. Answer DMs publicly. Builds community and discovery through engagement metrics.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- INFLUENCER -->
+    <div class="marketing-block reveal">
+      <div class="marketing-block-header">
+        <div class="block-icon"><i class="fas fa-star"></i></div>
+        <div>
+          <div class="label">C</div>
+          <h3>Influencer &amp; Partnership Strategy</h3>
+        </div>
+      </div>
+      <div class="influencer-cards">
+        <div class="inf-card">
+          <div class="label" style="margin-bottom:1rem;">🇦🇺 Australia — Micro Influencer Play</div>
+          <h3 style="font-size:1.5rem; margin-bottom:1rem;">20K–100K follower wellness &amp; lifestyle creators</h3>
+          <ul class="bullet-list">
+            <li>Target: Men's wellness, fitness, grooming, travel-to-Thailand niche accounts</li>
+            <li>Offer: Complimentary procedure in exchange for documented journey content (3–5 posts)</li>
+            <li>Deliverable: One 60-second Reel (procedural journey), one Instagram Stories series, one post at 6-month result</li>
+            <li>Budget per influencer: $500–$1,500 + procedure cost (fully offset by 1 patient acquisition)</li>
+            <li>Target: 2–3 AU influencer collabs in Month 2–3</li>
+          </ul>
+        </div>
+        <div class="inf-card">
+          <div class="label" style="margin-bottom:1rem;">🇸🇬 Singapore — Expat Community Focus</div>
+          <h3 style="font-size:1.5rem; margin-bottom:1rem;">Finance, tech, lifestyle creators in SG expat space</h3>
+          <ul class="bullet-list">
+            <li>Target: Expat Singapore lifestyle vloggers, men's fashion / grooming accounts, Thai travel accounts</li>
+            <li>Partner with SG-based Thais with cross-cultural audiences</li>
+            <li>Micro-influencer seeding: 5–10 nano-influencers (5K–15K) for high authenticity</li>
+            <li>PR gifting: complimentary consultation + follow-up kit to SG health &amp; wellness journalists</li>
+            <li>Referral incentive: Past SG patients get S$500 credit for each referred booking</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- LANDING PAGE -->
+    <div class="marketing-block reveal">
+      <div class="marketing-block-header">
+        <div class="block-icon"><i class="fas fa-laptop"></i></div>
+        <div>
+          <div class="label">D</div>
+          <h3>Landing Page Strategy</h3>
+        </div>
+      </div>
+      <div class="grid-3">
+        <div class="card">
+          <div class="label" style="margin-bottom:0.75rem;">Page 01</div>
+          <h3 style="font-size:1.4rem; margin-bottom:0.75rem;">Australia-Specific LP</h3>
+          <p style="font-size:0.88rem; color:var(--white-dim);">AUD pricing. AU patient testimonials. "From Australia to Bangkok" narrative. WhatsApp CTA in Australian English. Converts AU ad traffic directly.</p>
+        </div>
+        <div class="card">
+          <div class="label" style="margin-bottom:0.75rem;">Page 02</div>
+          <h3 style="font-size:1.4rem; margin-bottom:0.75rem;">Singapore-Specific LP</h3>
+          <p style="font-size:0.88rem; color:var(--white-dim);">SGD pricing. SG patient case studies. "2.5 hours away" travel angle. Bilingual option (EN/ZH). WhatsApp CTA. Converts SG ad traffic.</p>
+        </div>
+        <div class="card">
+          <div class="label" style="margin-bottom:0.75rem;">Page 03</div>
+          <h3 style="font-size:1.4rem; margin-bottom:0.75rem;">Free Hair Assessment</h3>
+          <p style="font-size:0.88rem; color:var(--white-dim);">Lead magnet page. "Upload 3 photos, get a personalised graft estimate within 24 hours." Captures name, email, phone. Feeds WhatsApp CRM pipeline immediately.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- RETARGETING -->
+    <div class="marketing-block reveal">
+      <div class="marketing-block-header">
+        <div class="block-icon"><i class="fas fa-redo"></i></div>
+        <div>
+          <div class="label">E</div>
+          <h3>Retargeting System</h3>
+        </div>
+      </div>
+      <div class="grid-2">
+        <div class="card">
+          <h3 style="font-size:1.4rem; margin-bottom:1rem;">Pixel &amp; Tracking Setup</h3>
+          <ul class="bullet-list">
+            <li>Meta Pixel on all landing pages — event tracking (pageview, lead form submit, WhatsApp click)</li>
+            <li>Google Tag Manager for cross-platform event unification</li>
+            <li>GA4 with conversion goals and audience building</li>
+            <li>TikTok Pixel (future-proofing for SG market)</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3 style="font-size:1.4rem; margin-bottom:1rem;">Re-Engagement Ad Sequences</h3>
+          <ul class="bullet-list">
+            <li><strong style="color:var(--gold);">Day 1–3:</strong> Social proof testimonial video ad served to LP visitors who didn't convert</li>
+            <li><strong style="color:var(--gold);">Day 4–7:</strong> Before/after result with "Free consultation" offer</li>
+            <li><strong style="color:var(--gold);">Day 8–14:</strong> Dr. Orn personal message video — "I'd love to assess your case"</li>
+            <li><strong style="color:var(--gold);">Day 15–30:</strong> Urgency ad — limited monthly case slots</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     08. SALES SYSTEM
+══════════════════════════════════════════════ -->
+<section id="sales" class="section-pad">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="label">Section 07</div>
+      <div class="gold-line"></div>
+      <h2>Sales System</h2>
+      <p>A repeatable, human-led process that converts warm leads into $9,000 patients — consistently, not accidentally.</p>
+    </div>
+
+    <div class="pipeline reveal">
+      <div class="pipeline-step">
+        <div class="step-num">01</div>
+        <h4>Lead In</h4>
+        <p>Form submit or WhatsApp inquiry via LP or Instagram DM. Auto-response within 5 minutes.</p>
+      </div>
+      <div class="pipeline-step">
+        <div class="step-num">02</div>
+        <h4>Qualify</h4>
+        <p>Coordinator assesses: hair loss stage, graft need, budget range, travel readiness. 3-question WhatsApp sequence.</p>
+      </div>
+      <div class="pipeline-step">
+        <div class="step-num">03</div>
+        <h4>Consult</h4>
+        <p>Video call with Dr. Orn or senior coordinator. Photo assessment. Personalised case review. Trust-building session.</p>
+      </div>
+      <div class="pipeline-step">
+        <div class="step-num">04</div>
+        <h4>Proposal</h4>
+        <p>Custom PDF quote sent within 24 hrs. Package breakdown. Transparent pricing. FAQ doc attached. No pressure.</p>
+      </div>
+      <div class="pipeline-step">
+        <div class="step-num">05</div>
+        <h4>Close</h4>
+        <p>Follow-up WhatsApp 48–72 hrs later. Address objections. Booking deposit (20%) confirms the date. Welcome kit sent.</p>
+      </div>
+    </div>
+
+    <div class="grid-2 reveal" style="margin-top:2rem;">
+      <div class="card">
+        <div class="label" style="margin-bottom:1rem;">CRM &amp; Follow-Up System</div>
+        <h3 style="font-size:1.5rem; margin-bottom:1rem;">No lead left behind</h3>
+        <ul class="bullet-list">
+          <li>All leads logged in CRM (HubSpot Free / WhatsApp CRM tool)</li>
+          <li>Lead status tags: New → Qualified → Consulted → Proposed → Booked → Completed → Referral</li>
+          <li>Automated WhatsApp reminders at days 3, 7, 14 for non-responders</li>
+          <li>Monthly newsletter to unconverted leads (results + offers)</li>
+          <li>Post-procedure: 30-day check-in → Request for testimonial/referral</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="label" style="margin-bottom:1rem;">Closing Strategy — Objection Handling</div>
+        <h3 style="font-size:1.5rem; margin-bottom:1rem;">Every "no" has a response</h3>
+        <ul class="bullet-list">
+          <li><strong style="color:var(--gold);">"Is it safe?"</strong> → Dr. Orn credentials video + accreditation docs + testimonials</li>
+          <li><strong style="color:var(--gold);">"It's too far"</strong> → Full concierge package walkthrough + "SG is 2.5 hours" framing</li>
+          <li><strong style="color:var(--gold);">"Too expensive"</strong> → Comparison chart vs local + payment plan option</li>
+          <li><strong style="color:var(--gold);">"Not sure about results"</strong> → 6-month photo case gallery + patient video call intro</li>
+          <li><strong style="color:var(--gold);">"Need to think"</strong> → Value summary doc + 7-day soft deadline on current pricing</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     09. COST STRUCTURE
+══════════════════════════════════════════════ -->
+<section id="costs" class="section-pad">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="label">Section 08</div>
+      <div class="gold-line"></div>
+      <h2>Unit Economics</h2>
+      <p>What it costs to acquire a patient, and what each patient is worth. The numbers make this a compelling business case.</p>
+    </div>
+
+    <div class="metrics-grid reveal">
+      <div class="metric-box">
+        <div class="m-label">Monthly Ad Spend (Both Markets)</div>
+        <div class="m-value">$2,800</div>
+        <div class="m-note">AU + SG combined budget</div>
+      </div>
+      <div class="metric-box">
+        <div class="m-label">Avg. Cost Per Lead</div>
+        <div class="m-value">$18</div>
+        <div class="m-note">Meta + Google blended CPL</div>
+      </div>
+      <div class="metric-box">
+        <div class="m-label">Lead-to-Booking Rate</div>
+        <div class="m-value">3.5%</div>
+        <div class="m-note">Industry avg: 2–5% for medical</div>
+      </div>
+      <div class="metric-box">
+        <div class="m-label">Cost Per Acquisition</div>
+        <div class="m-value">$520</div>
+        <div class="m-note">Total ad spend ÷ bookings</div>
+      </div>
+    </div>
+
+    <div class="profit-calc reveal">
+      <div>
+        <div class="label" style="margin-bottom:1.5rem;">Monthly P&amp;L Per Case (Conservative — 4 Cases)</div>
+        <div class="calc-row">
+          <span>Revenue (4 × $9,000)</span>
+          <span class="val">$36,000</span>
+        </div>
+        <div class="calc-row">
+          <span>Ad Spend</span>
+          <span class="val" style="color:var(--red-accent);">– $2,800</span>
+        </div>
+        <div class="calc-row">
+          <span>Agency Retainer (est.)</span>
+          <span class="val" style="color:var(--red-accent);">– $2,000</span>
+        </div>
+        <div class="calc-row">
+          <span>Package Delivery Cost</span>
+          <span class="val" style="color:var(--red-accent);">– $3,200</span>
+        </div>
+        <div class="calc-row">
+          <span>Overheads + CRM</span>
+          <span class="val" style="color:var(--red-accent);">– $500</span>
+        </div>
+        <div class="calc-row total">
+          <span><strong>Net Profit (4 cases)</strong></span>
+          <span class="val">$27,500</span>
+        </div>
+      </div>
+      <div>
+        <div class="label" style="margin-bottom:1.5rem;">Monthly P&amp;L Per Case (Target — 6 Cases)</div>
+        <div class="calc-row">
+          <span>Revenue (6 × $9,000)</span>
+          <span class="val">$54,000</span>
+        </div>
+        <div class="calc-row">
+          <span>Ad Spend (scaled)</span>
+          <span class="val" style="color:var(--red-accent);">– $4,000</span>
+        </div>
+        <div class="calc-row">
+          <span>Agency Retainer</span>
+          <span class="val" style="color:var(--red-accent);">– $2,000</span>
+        </div>
+        <div class="calc-row">
+          <span>Package Delivery Cost</span>
+          <span class="val" style="color:var(--red-accent);">– $4,800</span>
+        </div>
+        <div class="calc-row">
+          <span>Overheads + CRM</span>
+          <span class="val" style="color:var(--red-accent);">– $600</span>
+        </div>
+        <div class="calc-row total">
+          <span><strong>Net Profit (6 cases)</strong></span>
+          <span class="val">$42,600</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     10. SCALING PLAN
+══════════════════════════════════════════════ -->
+<section id="scale" class="section-pad">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="label">Section 09</div>
+      <div class="gold-line"></div>
+      <h2>12-Month Scaling Roadmap</h2>
+      <p>A phased approach that minimises risk, builds data, and accelerates once the model is proven.</p>
+    </div>
+
+    <div class="phases reveal">
+      <div class="phase">
+        <div class="phase-num">1</div>
+        <div class="phase-badge">Month 1–3</div>
+        <h3>Test &amp; Build</h3>
+        <ul class="bullet-list">
+          <li>Build AU &amp; SG-specific landing pages</li>
+          <li>Launch Meta + Google ads with 4 creative pillars</li>
+          <li>Set up CRM pipeline and WhatsApp automation</li>
+          <li>Onboard 2 AU micro-influencers</li>
+          <li>Target: 1–2 international bookings</li>
+          <li>Collect first testimonials + photos</li>
+        </ul>
+        <div style="margin-top:2rem; padding-top:1.5rem; border-top:1px solid var(--border);">
+          <div class="label" style="margin-bottom:0.3rem;">Revenue Target</div>
+          <div style="font-family:var(--font-display); font-size:1.8rem; color:var(--gold);">$9K–$18K</div>
+        </div>
+      </div>
+      <div class="phase">
+        <div class="phase-num">2</div>
+        <div class="phase-badge">Month 3–6</div>
+        <h3>Optimise &amp; Prove</h3>
+        <ul class="bullet-list">
+          <li>Kill underperforming ad creatives. Double down on winners</li>
+          <li>A/B test landing pages — headline, CTA, form length</li>
+          <li>Launch SG influencer campaign</li>
+          <li>Publish first 3 international patient case studies</li>
+          <li>Refine consultation-to-close script based on objection data</li>
+          <li>Target: 3–4 international cases/month</li>
+        </ul>
+        <div style="margin-top:2rem; padding-top:1.5rem; border-top:1px solid var(--border);">
+          <div class="label" style="margin-bottom:0.3rem;">Revenue Target</div>
+          <div style="font-family:var(--font-display); font-size:1.8rem; color:var(--gold);">$27K–$36K</div>
+        </div>
+      </div>
+      <div class="phase">
+        <div class="phase-num">3</div>
+        <div class="phase-badge">Month 6–12</div>
+        <h3>Scale Aggressively</h3>
+        <ul class="bullet-list">
+          <li>3× ad budget on proven creative + audience combinations</li>
+          <li>Introduce UK + UAE market test campaigns</li>
+          <li>Launch referral program for past international patients</li>
+          <li>YouTube channel: "The Bangkok Hair Journey" series</li>
+          <li>PR pitch to AU/SG men's lifestyle publications</li>
+          <li>Target: 6–10 international cases/month</li>
+        </ul>
+        <div style="margin-top:2rem; padding-top:1.5rem; border-top:1px solid var(--border);">
+          <div class="label" style="margin-bottom:0.3rem;">Revenue Target</div>
+          <div style="font-family:var(--font-display); font-size:1.8rem; color:var(--gold);">$54K–$90K</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     11. WHY THIS WILL WORK
+══════════════════════════════════════════════ -->
+<section id="why" class="section-pad">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="label">Section 10</div>
+      <div class="gold-line"></div>
+      <h2>Why This Will Work</h2>
+      <p>This is not a generic marketing plan. These are structural competitive advantages that cannot be easily replicated.</p>
+    </div>
+
+    <div class="advantages reveal">
+      <div class="adv-card">
+        <div class="adv-icon"><i class="fas fa-user-md"></i></div>
+        <h3>Doctor-Led Authority</h3>
+        <p>Dr. Orn is a real, visible, credentialed physician. This is the #1 conversion advantage over factory-style clinics. It cannot be faked and cannot be easily copied.</p>
+      </div>
+      <div class="adv-card">
+        <div class="adv-icon"><i class="fas fa-map-marker-alt"></i></div>
+        <h3>Zero Local Competition</h3>
+        <p>No Thai hair clinic is currently running paid ads in AU or SG with this strategy. The market is open. First mover advantage is enormous in a trust-based buying cycle.</p>
+      </div>
+      <div class="adv-card">
+        <div class="adv-icon"><i class="fas fa-chart-line"></i></div>
+        <h3>Proven Demand Exists</h3>
+        <p>AU and SG patients are already travelling for medical procedures. The behaviour exists — we're simply redirecting it with better targeting and a superior offer.</p>
+      </div>
+      <div class="adv-card">
+        <div class="adv-icon"><i class="fas fa-coins"></i></div>
+        <h3>Massive Price Arbitrage</h3>
+        <p>At $9,000, patients save 40–60% vs local costs. The savings pay for flights, hotel, and the full experience — and patients still come out ahead financially.</p>
+      </div>
+      <div class="adv-card">
+        <div class="adv-icon"><i class="fas fa-gem"></i></div>
+        <h3>Premium Packaging Wins</h3>
+        <p>Our target patient is not price-shopping — he's value-seeking. A fully packaged, seamless experience is perceived as worth more than a cheaper procedure with no support.</p>
+      </div>
+      <div class="adv-card">
+        <div class="adv-icon"><i class="fas fa-infinity"></i></div>
+        <h3>Self-Compounding Growth</h3>
+        <p>Each international patient becomes a content asset, a referral engine, and a social proof node. The system gets cheaper and faster to run over time — not the reverse.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     12. AGENCY PACKAGE
+══════════════════════════════════════════════ -->
+<section id="package" class="section-pad">
+  <div class="container">
+    <div class="pkg-intro reveal">
+      <div class="label">Section 11</div>
+      <div class="gold-line center"></div>
+      <h2 style="font-size:clamp(2.5rem,5vw,4rem);">Our Agency Package</h2>
+      <p style="color:var(--white-dim); max-width:600px; margin:1rem auto 0;">Everything you need to execute this strategy — designed, built, managed, and optimised — so Dr. Orn focuses on medicine while we own the growth engine.</p>
+    </div>
+
+    <div class="package-tiers reveal">
+
+      <!-- STANDARD -->
+      <div class="tier-card">
+        <div class="tier-header">
+          <div class="tier-name">Standard Package</div>
+          <h3>Growth Foundations</h3>
+          <p style="color:var(--white-dim); font-size:0.88rem; margin-top:0.5rem;">For clinics ready to test the international channel and build a reliable lead pipeline from scratch.</p>
+          <div class="tier-price">
+            <div class="inr">₹1,20,000</div>
+            <div class="usd">USD $1,440 / month</div>
+            <div class="per">+ 10% of ad spend managed</div>
+          </div>
+        </div>
+        <div class="tier-body">
+          <div class="tier-feature">
+            <i class="fas fa-check-circle"></i>
+            <span>Meta (FB/IG) ads management — AU &amp; SG campaigns, full setup and ongoing optimisation</span>
+          </div>
+          <div class="tier-feature">
+            <i class="fas fa-check-circle"></i>
+            <span>Google Search campaigns — keyword research, ad copy, bid management</span>
+          </div>
+          <div class="tier-feature">
+            <i class="fas fa-check-circle"></i>
+            <span>2 market-specific landing pages (AU + SG) — designed, built, and hosted</span>
+          </div>
+          <div class="tier-feature">
+            <i class="fas fa-check-circle"></i>
+            <span>8 ad creatives per month (static + video scripts)</span>
+          </div>
+          <div class="tier-feature">
+            <i class="fas fa-check-circle"></i>
+            <span>CRM pipeline setup (WhatsApp + HubSpot free tier)</span>
+          </div>
+          <div class="tier-feature">
+            <i class="fas fa-check-circle"></i>
+            <span>Monthly performance report + strategy review call</span>
+          </div>
+          <div class="tier-feature">
+            <i class="fas fa-check-circle"></i>
+            <span>Pixel &amp; tracking setup (Meta + GA4)</span>
+          </div>
+          <div class="tier-feature" style="color:var(--white-dim);">
+            <i class="fas fa-times-circle" style="color:var(--border);"></i>
+            <span>Influencer outreach &amp; management</span>
+          </div>
+          <div class="tier-feature" style="color:var(--white-dim);">
+            <i class="fas fa-times-circle" style="color:var(--border);"></i>
+            <span>YouTube video ad production</span>
+          </div>
+          <div class="tier-feature" style="color:var(--white-dim);">
+            <i class="fas fa-times-circle" style="color:var(--border);"></i>
+            <span>Dedicated WhatsApp sales automation</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- PREMIUM -->
+      <div class="tier-card featured">
+        <div class="tier-header">
+          <div class="featured-badge">Most Recommended</div>
+          <div class="tier-name">Premium Package</div>
+          <h3>Full-Stack Growth System</h3>
+          <p style="color:var(--white-dim); font-size:0.88rem; margin-top:0.5rem;">For clinics ready to dominate the AU/SG market with a complete, automated, full-funnel patient acquisition system.</p>
+          <div class="tier-price">
+            <div class="inr shimmer-text">₹2,50,000</div>
+            <div class="usd">USD $3,000 / month</div>
+            <div class="per">+ 8% of ad spend managed (volume discount)</div>
+          </div>
+        </div>
+        <div class="tier-body">
+          <div class="tier-feature">
+            <i class="fas fa-check-circle"></i>
+            <span><strong style="color:var(--gold);">Everything in Standard</strong>, plus:</span>
+          </div>
+          <div class="tier-feature">
+            <i class="fas fa-check-circle"></i>
+            <span>YouTube ad campaign — video production brief, scripting, editing coordination &amp; campaign management</span>
+          </div>
+          <div class="tier-feature">
+            <i class="fas fa-check-circle"></i>
+            <span>Full retargeting system — 4-stage re-engagement sequence, audience segmentation</span>
+          </div>
+          <div class="tier-feature">
+            <i class="fas fa-check-circle"></i>
+            <span>Influencer identification, outreach, negotiation &amp; campaign tracking (AU + SG)</span>
+          </div>
+          <div class="tier-feature">
+            <i class="fas fa-check-circle"></i>
+            <span>WhatsApp CRM automation — lead qualification bot, follow-up sequences, proposal delivery</span>
+          </div>
+          <div class="tier-feature">
+            <i class="fas fa-check-circle"></i>
+            <span>16 monthly ad creatives (static + video + carousel)</span>
+          </div>
+          <div class="tier-feature">
+            <i class="fas fa-check-circle"></i>
+            <span>Monthly patient case study production (written + social format)</span>
+          </div>
+          <div class="tier-feature">
+            <i class="fas fa-check-circle"></i>
+            <span>Instagram organic growth plan — content calendar, caption writing, hashtag strategy</span>
+          </div>
+          <div class="tier-feature">
+            <i class="fas fa-check-circle"></i>
+            <span>Bi-weekly strategy calls + real-time performance dashboard access</span>
+          </div>
+          <div class="tier-feature">
+            <i class="fas fa-check-circle"></i>
+            <span>Priority support — 24hr response SLA via dedicated Slack channel</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card reveal" style="margin-top:2rem; text-align:center;">
+      <div class="label" style="margin-bottom:1rem;">What does 1 patient booking pay for?</div>
+      <p style="font-size:0.95rem; color:var(--white-dim); max-width:700px; margin:0 auto 1.5rem;">
+        A single $9,000 booking covers 3 full months of the Premium Package, all ad spend, and still delivers a net profit to Dr. Orn Clinic. This is not a marketing cost. It's a growth investment with a measured, predictable return.
+      </p>
+      <div style="display:flex; gap:1rem; justify-content:center; flex-wrap:wrap; margin-top:1rem;">
+        <span class="tag">1 booking = 3× Premium retainer</span>
+        <span class="tag">ROI break-even in month 1</span>
+        <span class="tag">Net positive from case #2 onward</span>
+        <span class="tag">6 cases = $42K+ net / month</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     CLOSING CTA
+══════════════════════════════════════════════ -->
+<section id="closing">
+  <div class="container">
+    <h2 class="shimmer-text">Ready to Become<br><em style="-webkit-text-fill-color: inherit;">Asia's Premier</em><br>Hair Destination?</h2>
+    <p>The market is open. The demand exists. The strategy is proven. All that remains is execution — and that's exactly what we do.</p>
+    <div>
+      <a href="mailto:info@drornhaircenter.com" class="btn-primary">
+        <i class="fas fa-envelope"></i>
+        Start the Conversation
+      </a>
+    </div>
+    <div style="margin-top:3rem; display:flex; gap:3rem; justify-content:center; flex-wrap:wrap;">
+      <div style="text-align:center;">
+        <div style="font-family:var(--font-display); font-size:1.5rem; color:var(--gold);">Dr. Orn Clinic</div>
+        <div style="font-size:0.75rem; color:var(--white-dim); font-family:var(--font-sans); letter-spacing:0.12em;">Bangkok, Thailand</div>
+      </div>
+      <div style="text-align:center;">
+        <div style="font-family:var(--font-display); font-size:1.5rem; color:var(--gold);">Australia &amp; Singapore</div>
+        <div style="font-size:0.75rem; color:var(--white-dim); font-family:var(--font-sans); letter-spacing:0.12em;">Primary Target Markets</div>
+      </div>
+      <div style="text-align:center;">
+        <div style="font-family:var(--font-display); font-size:1.5rem; color:var(--gold);">$9,000</div>
+        <div style="font-size:0.75rem; color:var(--white-dim); font-family:var(--font-sans); letter-spacing:0.12em;">Per Patient Package</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>Dr. Orn Clinic · International Expansion Strategy 2025 · Confidential</p>
+  <p style="margin-top:0.5rem;">drornhaircenter.com · @drorn_onuma · @dr.ornclinic_medicalhair</p>
+</footer>
+
+<script>
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  reveals.forEach(el => io.observe(el));
+</script>
+</body>
+</html>
